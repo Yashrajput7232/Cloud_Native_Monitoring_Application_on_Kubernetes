@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-buster
 
 WORKDIR /app
 
@@ -8,8 +8,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-ENV ENV_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_HOST=0.0.0.0
 
 EXPOSE 5000
 
-CMD [ "flask" ,"run" ]
+CMD ["flask", "run"]
